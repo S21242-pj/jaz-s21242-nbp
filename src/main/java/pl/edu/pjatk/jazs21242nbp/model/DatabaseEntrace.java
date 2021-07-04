@@ -15,14 +15,7 @@ public class DatabaseEntrace {
     @ApiModelProperty(notes = "Currenct ID")
     private Long id;
 
-
-
-
-
     public DatabaseEntrace(){
     }
-
-
-
 
 }

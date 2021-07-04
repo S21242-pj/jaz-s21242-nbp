@@ -14,4 +14,7 @@ public class ServiceNbp {
         this.restTemplate = restTemplate;
         this.repositoryNbp = repositoryNbp;
     }
+
+
+
 }
