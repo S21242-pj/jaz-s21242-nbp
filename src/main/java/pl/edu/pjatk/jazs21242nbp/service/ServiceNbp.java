@@ -20,7 +20,7 @@ public class ServiceNbp {
 
     @GetMapping
     public DatabaseEntrace getPricesFromDateRange(String firstDate, String lastDate) {
-        Root root = restTemplate.getForObject("http://api.nbp.pl/api/exchangerates/tables/a/2012-01-01/2012-01-31/?format=json")
+        Root root = restTemplate.getForObject("http://api.nbp.pl/api/exchangerates/tables/a/"+ firstDate +"/"+ lastDate+ "/?format=json", Root.class);
     }
 
 

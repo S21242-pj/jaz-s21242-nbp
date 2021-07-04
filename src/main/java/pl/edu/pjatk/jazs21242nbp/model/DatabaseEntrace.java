@@ -19,9 +19,6 @@ public class DatabaseEntrace {
     @ApiModelProperty(notes = "Currency ID")
     private Long id;
 
-    @ApiModelProperty(notes = "Currency name", required = true, dataType = "String")
-    private String currency;
-
     @ApiModelProperty(notes = "First day from range", required = true, dataType = "String")
     private String firstDate;
 
@@ -40,21 +37,13 @@ public class DatabaseEntrace {
         return dateFormat.format(date);
     }
 
-    public DatabaseEntrace(String currency, String firstDate, String lastDate, Double avgPrices) {
-        this.currency = currency;
+    public DatabaseEntrace(String firstDate, String lastDate, Double avgPrices) {
         this.firstDate = firstDate;
         this.lastDate = lastDate;
         this.avgPrices = avgPrices;
     }
 
-    public DatabaseEntrace(String currency, String firstDate, String lastDate, double avgPrices) {
-
-
-    }
-
-
     public DatabaseEntrace() {
     }
-
 
 }

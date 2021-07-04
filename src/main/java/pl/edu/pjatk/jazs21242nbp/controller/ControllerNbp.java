@@ -29,13 +29,8 @@ public class ControllerNbp {
             @ApiResponse(code = 404, message = "404 NotFound"),
             @ApiResponse(code = 400, message = "400 Bad Request")
     })
-    @GetMapping("/{currency}")
+    @GetMapping("/table")
     public ResponseEntity<DatabaseEntrace> getPriceFromDays(
-            @ApiParam(name = "currency",
-                    value = "Currency code(usd)",
-                    required = true,
-                    type = "String")
-            @PathVariable String currency,
             @ApiParam(name = "firstDate",
                     value = "date (2000-01-01",
                     required = true,
@@ -47,7 +42,7 @@ public class ControllerNbp {
                     type = "String")
             @RequestParam String lastDate
     ){
-        return ResponseEntity.ok(serviceNbp.getPricesFromDateRange(currency,firstDate,lastDate));
+        return ResponseEntity.ok(serviceNbp.getPricesFromDateRange(firstDate,lastDate));
     }
 
 
