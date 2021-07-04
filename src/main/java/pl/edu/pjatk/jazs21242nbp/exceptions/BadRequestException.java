@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class BadGatewayException extends RuntimeException{
-    @ExceptionHandler(BadGatewayException.class)
-    public ResponseEntity<Object> handlerRuntimeException(BadGatewayException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_GATEWAY);
+public class BadRequestException extends RuntimeException {
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<Object> handlerRuntimeException(BadRequestException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 }
-
